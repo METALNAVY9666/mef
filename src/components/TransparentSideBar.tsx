@@ -1,5 +1,7 @@
 import { BrowserView, MobileView } from "react-device-detect";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useGlitch, GlitchHandle } from "react-powerglitch";
+// https://www.npmjs.com/package/react-powerglitch
 
 interface MenuButtonProps {
   scene: string;
@@ -21,8 +23,10 @@ function MenuButton({
   setBigText,
   getScene,
 }: MenuButtonProps) {
+  const clickGlitch: GlitchHandle = useGlitch({ playMode: "click" });
+
   const getButtonClassName = (color: string) => {
-    return "btn btn-lg bg-transparent text-" + color + " rounded glitch fw-4";
+    return "btn btn-lg bg-transparent text-" + color + " rounded fw-4";
   };
 
   const [buttonClassName, setButtonClassName] = useState(
@@ -41,6 +45,7 @@ function MenuButton({
         setScene(scene);
         setBigText(bigText);
       }}
+      ref={clickGlitch.ref}
     >
       <div className="h3" style={{ fontWeight: 800 }}>
         {scene.toUpperCase()}
@@ -58,10 +63,10 @@ function TransparentSidebar({ scene, setScene }: TransparentSidebarProps) {
         <div
           className="position-fixed top-0 start-0 h-100 ps-5"
           style={{
-            width: "20%", // Largeur de la sidebar
-            backgroundColor: "rgba(0, 0, 0, 0.5)", // Couleur blanche semi-transparente
-            backdropFilter: "blur(10px)", // Effet de flou
-            zIndex: 1030, // S'assurer que la sidebar est devant le contenu
+            width: "20%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            backdropFilter: "blur(10px)",
+            zIndex: 1,
           }}
         >
           <div
@@ -102,7 +107,7 @@ function TransparentSidebar({ scene, setScene }: TransparentSidebarProps) {
       <MobileView>
         {showMobileMenu ? null : (
           <button
-            className="btn btn-lg position-fixed top-0 start-0 h-100 ps-5 glitch"
+            className="btn btn-lg position-fixed top-0 start-0 h-100 ps-5"
             onClick={() => {
               setShowMobileMenu(!showMobileMenu);
             }}

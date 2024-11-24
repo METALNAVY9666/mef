@@ -32,6 +32,7 @@ export default function GifBackground({ scene }: GifBackgroundProps) {
           bottom: 0,
           minHeight: "100%",
           minWidth: "100%",
+          zIndex: 0,
         }}
         key={src}
       >
