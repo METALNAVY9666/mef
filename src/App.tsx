@@ -5,6 +5,7 @@ import TransparentSidebar from "./components/TransparentSideBar";
 import Biographie from "./components/Biographie";
 import GifBackground from "./components/GifBackground";
 import HomeBackground from "./components/HomeBackground";
+import { Albums } from "./components/Albums";
 
 function App() {
   const [scene, setScene] = useState("home");
@@ -26,7 +27,8 @@ function App() {
         <TransparentSidebar scene={scene} setScene={setScene} />
 
         <div className="flex-grow-1">
-          {scene === "biographie" && <Biographie />}
+          {["biographie", "bio"].includes(scene) && <Biographie />}
+          {scene === "albums" && <Albums />}
         </div>
       </div>
     </div>

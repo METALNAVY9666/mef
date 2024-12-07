@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import communion_musicale from "../assets/communion_musicale.webm";
-import decor_fade from "../assets/decor_fade.webm";
-// import profit_image from "../assets/profit_image.webm";
-// import trou_noir from "../assets/trou_noir.webm";
+import communion_musicale from "../assets/communion_musicale.mp4";
+import decor_fade from "../assets/decor_fade.mp4";
+// import profit_image from "../assets/profit_image.mp4";
+// import trou_noir from "../assets/trou_noir.mp4";
 
 const scenes: Record<string, string> = {
   albums: communion_musicale,
@@ -26,6 +26,7 @@ export default function GifBackground({ scene }: GifBackgroundProps) {
         autoPlay
         muted
         loop
+        playsInline
         style={{
           position: "fixed",
           right: 0,
@@ -36,7 +37,7 @@ export default function GifBackground({ scene }: GifBackgroundProps) {
         }}
         key={src}
       >
-        <source src={src} type="video/webm" />
+        <source src={src} type="video/mp4" />
       </video>
     </>
   );

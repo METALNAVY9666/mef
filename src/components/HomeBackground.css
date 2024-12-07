@@ -34,6 +34,7 @@
   color: #ffffff;
   background-color: #000000 !important;
   mix-blend-mode: multiply;
+  -webkit-mix-blend-mode: multiply;
   user-select: none;
 }
 
