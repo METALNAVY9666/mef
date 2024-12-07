@@ -1,11 +1,9 @@
-import { useGlitch, GlitchHandle } from "react-powerglitch";
 import "./Biographie.css";
 import { isBrowser } from "react-device-detect";
 
 import { useEffect, useRef } from "react";
 import "./Biographie.css";
 export default function Biographie() {
-  const glitch: GlitchHandle = useGlitch({ playMode: "auto" });
 
   const titles = useRef<
     (HTMLHeadingElement | HTMLLIElement | HTMLButtonElement | null)[]
