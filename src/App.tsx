@@ -6,6 +6,7 @@ import Biographie from "./components/Biographie";
 import GifBackground from "./components/GifBackground";
 import HomeBackground from "./components/HomeBackground";
 import { Albums } from "./components/Albums";
+import Shop from "./components/Shop";
 
 function App() {
   const [scene, setScene] = useState("home");
@@ -28,6 +29,7 @@ function App() {
 
         <div className="flex-grow-1">
           {["biographie", "bio"].includes(scene) && <Biographie />}
+          {["shop", "boutique"].includes(scene) && <Shop />}
           {scene === "albums" && <Albums />}
         </div>
       </div>

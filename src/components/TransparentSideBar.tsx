@@ -96,10 +96,25 @@ function TransparentSidebar({ scene, setScene }: TransparentSidebarProps) {
               />
             </li>
             <li>
-              <h2
-                className="mt-5 border border-danger text-white"
-                style={{ fontWeight: 700 }}
-              >
+              <MenuButton
+                scene={isBrowser ? "boutique" : "shop"}
+                bigText="La boutique officielle"
+                setScene={setScene}
+                setBigText={setBigText}
+                getScene={scene}
+              />
+            </li>
+            <li>
+              <MenuButton
+                scene={"contact"}
+                bigText="Contacter M.E.F"
+                setScene={setScene}
+                setBigText={setBigText}
+                getScene={scene}
+              />
+            </li>
+            <li>
+              <h2 className="mt-5 text-white" style={{ fontWeight: 700 }}>
                 {bigText}
               </h2>
             </li>

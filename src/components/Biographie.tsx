@@ -4,7 +4,6 @@ import { isBrowser } from "react-device-detect";
 import { useEffect, useRef } from "react";
 import "./Biographie.css";
 export default function Biographie() {
-
   const titles = useRef<
     (HTMLHeadingElement | HTMLLIElement | HTMLButtonElement | null)[]
   >([]);
@@ -176,54 +175,6 @@ export default function Biographie() {
                 par un rap littéraire et des adolescents séduits par l’humour et
                 les mises en scène.
               </li>
-            </ul>
-          </section>
-          <section>
-            <h3
-              ref={(el) => (titles.current[12] = el)}
-              className="mt-5 mb-3 fade-in my-5"
-              style={{ fontWeight: 800, fontSize: isBrowser ? 50 : 30 }}
-            >
-              Discographie
-            </h3>
-            <ul>
-              <button
-                ref={(el) => (titles.current[13] = el)}
-                className="fade-in btn btn-lg bg-light text-black mb-3"
-              >
-                <strong>Dossier Esprit Connecté I</strong> : Un album « street »
-                par excellence.
-              </button>
-              <button
-                ref={(el) => (titles.current[14] = el)}
-                className="fade-in btn btn-lg bg-light text-black mb-3"
-              >
-                <strong>Dossier Esprit Connecté II</strong> : Thèmes modernes
-                comme la censure et les réseaux sociaux. Mention spéciale pour «
-                Dernier rappel ».
-              </button>
-              <button
-                ref={(el) => (titles.current[15] = el)}
-                className="fade-in btn btn-lg bg-light text-black mb-3"
-              >
-                <strong>Dossier Sessions Old School</strong> : Morceaux
-                classiques comme « Cher Hip Hop », « Encaisse une leucémie », et
-                « Majesté du Décor ».
-              </button>
-              <button
-                ref={(el) => (titles.current[16] = el)}
-                className="fade-in btn btn-lg bg-light text-black mb-3"
-              >
-                <strong>Dossier War Tape</strong> : Sons sombres dans la lignée
-                d'Esprit Connecté I.
-              </button>
-              <button
-                ref={(el) => (titles.current[17] = el)}
-                className="fade-in btn btn-lg bg-light text-black mb-3"
-              >
-                <strong>Dossiers Funky Sessions I & II</strong> : Rap positif
-                sur des instrumentales funk, une rareté aujourd’hui.
-              </button>
             </ul>
           </section>
         </div>
