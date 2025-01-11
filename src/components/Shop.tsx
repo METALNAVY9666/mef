@@ -1,3 +1,4 @@
+import { isBrowser } from "react-device-detect";
 import constructionIcon from "../assets/construction.png";
 
 function Shop() {
@@ -6,10 +7,12 @@ function Shop() {
       <h1
         className="slide btn btn-lg bg-black text-white rounded"
         style={{
-          fontWeight: 800,
+          fontWeight: isBrowser ? 800 : 600,
           marginTop: "10vh",
-          marginLeft: "45vw",
-          fontSize: 90,
+          marginLeft: "40vw",
+          width: "60vw",
+
+          fontSize: isBrowser ? 90 : 30,
         }}
       >
         En construction
@@ -38,6 +41,7 @@ function Shop() {
         alt="En construction"
         style={{
           marginLeft: "50vw",
+          width: "40vw",
           backgroundColor: "white",
           marginTop: "5vh",
           borderRadius: "5%",

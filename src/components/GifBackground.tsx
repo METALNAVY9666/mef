@@ -7,6 +7,8 @@ import trou_noir from "../assets/trou_noir.mp4";
 const scenes: Record<string, string> = {
   albums: communion_musicale,
   biographie: decor_fade,
+  bio: decor_fade,
+  shop: profit_image,
   boutique: profit_image,
   contact: trou_noir,
 };

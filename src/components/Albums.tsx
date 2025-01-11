@@ -61,10 +61,10 @@ const AlbumCover = ({ url, title, src }: AlbumCoverProps) => {
       <div style={{}}>
         <h1
           style={{
-            fontWeight: 800,
+            fontWeight: isBrowser ? 800 : 600,
             textAlign: "center",
             color: "white",
-            WebkitTextStroke: "2px black",
+            WebkitTextStroke: isBrowser ? "2px black" : "1px black",
             marginTop: "5vh",
           }}
         >
@@ -75,7 +75,7 @@ const AlbumCover = ({ url, title, src }: AlbumCoverProps) => {
           style={{
             borderRadius: "10px",
             marginTop: "1vh",
-            marginLeft: "10vw",
+            marginLeft: isBrowser ? "17vw" : "17vw",
             width: "20vw",
             height: "20vw",
             objectFit: "cover",
@@ -101,15 +101,15 @@ export function Albums() {
   return (
     <div
       className="albums-grid mt-5"
-      style={isBrowser ? { marginLeft: "42vw" } : {}}
+      style={{ marginLeft: isBrowser ? "42vw" : "40vw" }}
     >
       <h1
         style={{
           marginLeft: "6vw",
           fontWeight: 800,
-          fontSize: 80,
+          fontSize: isBrowser ? 80 : 30,
           color: "white",
-          WebkitTextStroke: "3px black",
+          WebkitTextStroke: isBrowser ? "3px black" : "1px black",
         }}
         className="my-5"
       >
@@ -120,7 +120,11 @@ export function Albums() {
       ))}
       <button
         className="btn btn-lg my-5 bg-dark text-white border"
-        style={{ marginLeft: "13vw", fontWeight: 800, fontSize: 50 }}
+        style={{
+          marginLeft: isBrowser ? "13vw" : "8vw",
+          fontWeight: isBrowser ? 800 : 600,
+          fontSize: isBrowser ? 50 : 30,
+        }}
         onClick={() =>
           window.open("https://www.youtube.com/@serrure100", "_blank")
         }

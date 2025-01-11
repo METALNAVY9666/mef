@@ -67,8 +67,9 @@ function TransparentSidebar({ scene, setScene }: TransparentSidebarProps) {
         }
         style={{
           width: isBrowser ? "30vw" : "40vw",
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          backgroundColor: "rgba(0, 0, 0, .5)",
           backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
           zIndex: 1,
         }}
       >
