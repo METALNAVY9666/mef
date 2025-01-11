@@ -121,7 +121,7 @@ export function Albums() {
       <button
         className="btn btn-lg my-5 bg-dark text-white border"
         style={{
-          marginLeft: isBrowser ? "13vw" : "8vw",
+          marginLeft: isBrowser ? "17vw" : "8vw",
           fontWeight: isBrowser ? 800 : 600,
           fontSize: isBrowser ? 50 : 30,
         }}
